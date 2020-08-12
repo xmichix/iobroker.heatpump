@@ -61,6 +61,7 @@
 		"mode": "schedule",
 		"schedule": "*5 * * * *",
 		"type": "climate-control",
+		"materialize": true,
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"
