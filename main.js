@@ -27,7 +27,7 @@ class Heatpump extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-		//adapter = this;
+		adapter = this;
 	}
 
 
@@ -41,7 +41,7 @@ class Heatpump extends utils.Adapter {
 		// this.config:
 		this.log.info("config user: " + this.config.user);
 		this.log.info("config pass: " + this.config.pass);
-		/*const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
+		const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
 		var params = "?email=michael.heigl@t-online.de&password=Gravity01"; // changing into querystring eg 'A=a&B=b'
 		var options = {
 			'Accept': 'application/json',
@@ -60,7 +60,7 @@ class Heatpump extends utils.Adapter {
 		}, function (error, response, body) {
 			adapter.log.info(body)
 			console.log(body);
-		});*/
+		});
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
