@@ -10,8 +10,8 @@ const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-var request;
-var adapter;
+//var request;
+//var adapter;
 class Heatpump extends utils.Adapter {
 
 	/**
@@ -27,7 +27,7 @@ class Heatpump extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-		adapter = this;
+		//adapter = this;
 	}
 
 
