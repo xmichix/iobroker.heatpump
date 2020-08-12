@@ -10,9 +10,10 @@ const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
-
+var request;
+var adapter;
 class Heatpump extends utils.Adapter {
-
+	
 	/**
 	 * @param {Partial<utils.AdapterOptions>} [options={}]
 	 */
@@ -26,6 +27,7 @@ class Heatpump extends utils.Adapter {
 		// this.on("objectChange", this.onObjectChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		adapter = this;
 	}
 	
 	
@@ -39,7 +41,26 @@ class Heatpump extends utils.Adapter {
 		// this.config:
 		this.log.info("config user: " + this.config.user);
 		this.log.info("config pass: " + this.config.pass);
-
+		const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
+		var params = "?email=michael.heigl@t-online.de&password=Gravity01"; // changing into querystring eg 'A=a&B=b'
+		var options = {
+			'Accept': 'application/json',
+			'User-Agent': 'PoolHeatPump/2.0.0 (iPhone; iOS 13.6; Scale/3.00)',
+			'Content-Type': 'application/x-www-form-urlencoded',
+			'userId': '0',
+			'token': '0',
+			'Accept-Language': 'de-DE;q1',
+        };
+		
+			
+		request.post({
+			headers: { options }, // important to interect with PHP
+				url: link,
+				body: params,
+			}, function(error, response, body){
+				adapter.log.info(body)
+				console.log(body);
+		});
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
