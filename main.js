@@ -69,7 +69,8 @@ class Heatpump extends utils.Adapter {
 		// ack should be always set to true if the value is received from or acknowledged from the target system
 		await this.setStateAsync("testVariable", { val: true, ack: true });
 
-		
+		this.log.debug("exit, all done");
+		this.terminate ? this.terminate(0) : this.process.exit(0);
 	}
 
 	/**
