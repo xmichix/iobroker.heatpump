@@ -52,7 +52,7 @@ class Heatpump extends utils.Adapter {
 			'Accept-Language': 'de-DE;q1',
 		};
 
-
+		request = request || require('request');
 		request.post({
 			headers: { options }, // important to interect with PHP
 			url: link,
