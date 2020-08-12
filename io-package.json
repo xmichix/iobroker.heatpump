@@ -1,0 +1,79 @@
+{
+	"common": {
+		"name": "heatpump",
+		"version": "0.0.1",
+		"news": {
+			"0.0.1": {
+				"en": "initial release",
+				"de": "Erstveröffentlichung",
+				"ru": "Начальная версия",
+				"pt": "lançamento inicial",
+				"nl": "Eerste uitgave",
+				"fr": "Première version",
+				"it": "Versione iniziale",
+				"es": "Versión inicial",
+				"pl": "Pierwsze wydanie",
+				"zh-cn": "首次出版"
+			}
+		},
+		"title": "heatpump",
+		"titleLang": {
+			"en": "heatpump",
+			"de": "Wärmepumpe",
+			"ru": "тепловой носос",
+			"pt": "bomba de calor",
+			"nl": "warmtepomp",
+			"fr": "pompe à chaleur",
+			"it": "pompa di calore",
+			"es": "bomba de calor",
+			"pl": "Pompa ciepła",
+			"zh-cn": "热泵"
+		},
+		"desc": {
+			"en": "heatpump",
+			"de": "Wärmepumpe",
+			"ru": "тепловой носос",
+			"pt": "bomba de calor",
+			"nl": "warmtepomp",
+			"fr": "pompe à chaleur",
+			"it": "pompa di calore",
+			"es": "bomba de calor",
+			"pl": "Pompa ciepła",
+			"zh-cn": "热泵"
+		},
+		"authors": [
+			"xmichix <mheigl007@gmail.com>"
+		],
+		"keywords": [
+			"ioBroker",
+			"template",
+			"Smart Home",
+			"home automation"
+		],
+		"license": "MIT",
+		"platform": "Javascript/Node.js",
+		"main": "main.js",
+		"icon": "heatpump.png",
+		"enabled": true,
+		"extIcon": "https://raw.githubusercontent.com/xmichix/ioBroker.heatpump/master/admin/heatpump.png",
+		"readme": "https://github.com/xmichix/ioBroker.heatpump/blob/master/README.md",
+		"loglevel": "info",
+		"mode": "daemon",
+		"type": "climate-control",
+		"compact": true,
+		"connectionType": "cloud",
+		"dataSource": "poll",
+		"materialize": true,
+		"dependencies": [
+			{
+				"js-controller": ">=1.4.2"
+			}
+		]
+	},
+	"native": {
+		"option1": true,
+		"option2": "42"
+	},
+	"objects": [],
+	"instanceObjects": []
+}
