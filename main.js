@@ -13,7 +13,7 @@ const utils = require("@iobroker/adapter-core");
 var request;
 var adapter;
 class Heatpump extends utils.Adapter {
-	
+
 	/**
 	 * @param {Partial<utils.AdapterOptions>} [options={}]
 	 */
@@ -29,8 +29,8 @@ class Heatpump extends utils.Adapter {
 		this.on("unload", this.onUnload.bind(this));
 		adapter = this;
 	}
-	
-	
+
+
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
@@ -41,7 +41,7 @@ class Heatpump extends utils.Adapter {
 		// this.config:
 		this.log.info("config user: " + this.config.user);
 		this.log.info("config pass: " + this.config.pass);
-		const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
+		/*const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
 		var params = "?email=michael.heigl@t-online.de&password=Gravity01"; // changing into querystring eg 'A=a&B=b'
 		var options = {
 			'Accept': 'application/json',
@@ -50,17 +50,17 @@ class Heatpump extends utils.Adapter {
 			'userId': '0',
 			'token': '0',
 			'Accept-Language': 'de-DE;q1',
-        };
-		
-			
+		};
+
+
 		request.post({
 			headers: { options }, // important to interect with PHP
-				url: link,
-				body: params,
-			}, function(error, response, body){
-				adapter.log.info(body)
-				console.log(body);
-		});
+			url: link,
+			body: params,
+		}, function (error, response, body) {
+			adapter.log.info(body)
+			console.log(body);
+		});*/
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
@@ -85,7 +85,7 @@ class Heatpump extends utils.Adapter {
 		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
 		// this.subscribeStates("*");
 
-		
+
 		// same thing, but the value is flagged "ack"
 		// ack should be always set to true if the value is received from or acknowledged from the target system
 		await this.setStateAsync("testVariable", { val: true, ack: true });
