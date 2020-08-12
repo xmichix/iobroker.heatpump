@@ -61,10 +61,6 @@
 		"mode": "schedule",
 		"schedule": "*5 * * * *",
 		"type": "climate-control",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"materialize": true,
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"
