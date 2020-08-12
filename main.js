@@ -46,7 +46,9 @@ class Heatpump extends utils.Adapter {
 		const { Buffer } = require('buffer');
 		const length = Buffer.byteLength(params, 'utf-8');
 		this.log.info("contentlength: " + length);
-		var options = {
+		
+
+		var header = {
 			'Accept': 'application/json',
 			'User-Agent': 'PoolHeatPump/2.0.0 (iPhone; iOS 13.6; Scale/3.00)',
 			'Content-Type': 'application/x-www-form-urlencoded',
@@ -56,15 +58,26 @@ class Heatpump extends utils.Adapter {
 			'Content-Length' : length
 		};
 
+		const data = {
+			url: link,
+			method: 'POST',
+			headers: header,
+			body : params
+			
+		};
 		request = request || require('request');
-		request.post({
+		request(data, function(err, res, body) {
+			let json = JSON.parse(body);
+			console.log(json);
+		});
+		/*request.post({
 			headers: { options }, // important to interect with PHP
 			url: link,
 			body: params,
 		}, function (error, response, body) {
 			adapter.log.info(body)
 			console.log(body);
-		});
+		});*/
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
