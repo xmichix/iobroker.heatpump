@@ -68,6 +68,7 @@ class Heatpump extends utils.Adapter {
 		request = request || require('request');
 		request(data, function(err, res, body) {
 			let json = JSON.parse(body);
+			adapter.log.info(body)
 			console.log(json);
 		});
 		/*request.post({
