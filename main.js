@@ -27,6 +27,12 @@ class Heatpump extends utils.Adapter {
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
+	
+	async main()
+	{
+		this.log.info("Starte data " + this.config.user);
+
+	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
