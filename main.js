@@ -43,6 +43,8 @@ class Heatpump extends utils.Adapter {
 		this.log.info("config pass: " + this.config.pass);
 		const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
 		var params = "?email=michael.heigl@t-online.de&password=Gravity01"; // changing into querystring eg 'A=a&B=b'
+		const { Buffer } = require('buffer');
+		const length = Buffer.byteLength(params, 'utf-8');
 		var options = {
 			'Accept': 'application/json',
 			'User-Agent': 'PoolHeatPump/2.0.0 (iPhone; iOS 13.6; Scale/3.00)',
@@ -50,6 +52,7 @@ class Heatpump extends utils.Adapter {
 			'userId': '0',
 			'token': '0',
 			'Accept-Language': 'de-DE;q1',
+			'Content-Length' : length
 		};
 
 		request = request || require('request');
