@@ -42,7 +42,7 @@ class Heatpump extends utils.Adapter {
 		this.log.info("config user: " + this.config.user);
 		this.log.info("config pass: " + this.config.pass);
 		const link = 'http://www.fzdbiology.com:8080/scadaiot/user/loginUser.do';
-		var params = "?email=michael.heigl@t-online.de&password=Gravity01"; // changing into querystring eg 'A=a&B=b'
+		var params = "?email=xxx&password=xxx"; // changing into querystring eg 'A=a&B=b'
 		const { Buffer } = require('buffer');
 		const length = Buffer.byteLength(params, 'utf-8');
 		this.log.info("contentlength: " + length);
